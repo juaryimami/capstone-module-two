@@ -1,13 +1,18 @@
-import './style.css';
-import { createGrid } from './modules/createGride.js';
-import { getComics } from './modules/getData.js';
-import { getDataLocalStorage, setDataLocalStorage } from './modules/store.js';
+import { getData } from './modules/getData.js';
+import { sendLikes } from './modules/like.js';
+import { fillPopUp, closePopUp } from './modules/popUp.js';
+import './style.scss';
+
+const container = document.querySelector('.container');
+const close = document.querySelector('.close');
 
 window.addEventListener('load', () => {
-  getComics().then((result) => {
-    result.splice(7, 1);
-    setDataLocalStorage(result);
-  });
-  const mainGrid = getDataLocalStorage();
-  createGrid(mainGrid);
+  getData();
 });
+
+container.addEventListener('click', (e) => {
+  fillPopUp(e);
+  sendLikes(e);
+});
+
+close.addEventListener('click', closePopUp);
