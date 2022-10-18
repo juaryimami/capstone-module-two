@@ -6,9 +6,10 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "watch": "webpack --watch",
+    "build": "webpack",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
