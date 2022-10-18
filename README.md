@@ -60,15 +60,30 @@ To get a local copy up and running follow these simple steps:
 
 ## :blue_book: Learning Objectives
 
-- Use webpack to bundle JavaScript.
-- Learn how to use proper ES6 syntax.
-- Use ES6 modules to write modular JavaScript.
+- Use JavaScript to make websites dynamic and build basic single page apps.
+- Use ES6 syntax.
+- Use ES6 modules.
+- Use callbacks and promises.
+- Use webpack.
+- Apply JavaScript best practices and language style guides in code.
+- Use AAA pattern for unit tests.
+- Write units tests for a JavaScript app.
+- Follow Gitflow.
+- Solve simple git conflicts.
+- Send and receive data from an API.
+- Use API documentation.
+- Understand and use JSON.
+- Make JavaScript code asynchronous.
+- Perform a code review for a team member.
 
 ## Authors
 
 👤 **JuharSeid**
 
 - GitHub: [@JuharYimer](https://github.com/juaryimami)
+
+👤 **David**
+
 - GitHub: [@amon-cofie](https://github.com/amone-cofie)
 
 ## 🤝 :raised_hand: :raised_hand: Contributions
