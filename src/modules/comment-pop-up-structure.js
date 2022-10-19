@@ -61,7 +61,7 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   //addinng the features of the show that has been clicked
   showImage.src = `${obj.show.image.original}`;
   showTitle.innerText = `${obj.show.name}`;
-  showDescription.innerText = `${obj.show.summary}`;
+  showDescription.innerHTML = `${obj.show.summary}`;
 
   //this callback will call the getElementsFromAPI function
   const CommentObjArr = getCommentCallback(id).then((data) => data);
