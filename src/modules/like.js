@@ -1,5 +1,5 @@
 const createURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-const likeURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1skhHeMuaX5lQlDsoElJ/likes/';
+const likeURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ZJZK1WZPgEODfC7j5Gdv/';
 
 export const createApp = async () => {
   const response = await fetch(createURL, {
