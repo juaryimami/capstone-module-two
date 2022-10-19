@@ -6,6 +6,7 @@ const container = document.querySelector('.container');
 
 window.addEventListener('load', () => {
   getData();
+  
 });
 
 container.addEventListener('click', (e) => {
