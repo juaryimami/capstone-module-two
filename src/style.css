@@ -143,3 +143,10 @@ header {
   padding: 0.3rem;
   font-family: cursive;
 }
+
+footer {
+  padding: calc(1rem + 0.8vw) calc(1.5rem + 4.5vw);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 32px;
+}
