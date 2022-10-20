@@ -1,5 +1,6 @@
 // import the access key to the API
 import APP_KEY from './constants.js';
+import countComments from './comments-counter.js';
 
 // async function to get the comments from the API
 export const getCommentsFromAPI = async (itemID) => {
@@ -44,6 +45,7 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   const commentBtn = document.createElement('button');
   const closePopUpBtn = document.createElement('i');
   closePopUpBtn.classList.add('fa', 'fa-times');
+  let commentCounter = 0;
 
   // adding semantics to the nodes created
   nameInput.type = 'text';
@@ -53,6 +55,8 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   commentInput.setAttribute('placeholder', 'Your insight');
   commentBtn.innerText = 'Comment';
   commentBtn.classList.add('button');
+  commentsHeading.innerText = `Comments ${commentCounter}`;
+  commentsContainer.classList.add('comment-container');
 
   // appending the inputs and comment button node to the form
   commentForm.appendChild(nameInput);
@@ -78,22 +82,24 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
     (data) => data,
     (error) => {
       throw new Error(error);
-    },
+    }
   );
 
   // constructing new comments from the array of objects
-
   CommentObjArr.then(
     (data) => {
       if (data.length > 0) {
         data.forEach((e) => {
           const newComment = document.createElement('li');
           newComment.innerText = `${e.creation_date} ${e.username}: ${e.comment}`;
+          newComment.classList.add('new-comment');
           commentsContainer.appendChild(newComment);
         });
       }
+      commentCounter = countComments(commentsContainer);
+      commentsHeading.innerText = `Comments (${commentCounter})`;
     },
-    (error) => error,
+    (error) => error
   );
 
   // adding the event listener for the submit event of the form
