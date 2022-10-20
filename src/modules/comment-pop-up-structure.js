@@ -45,6 +45,10 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   const closePopUpBtn = document.createElement('i');
   closePopUpBtn.classList.add('fa', 'fa-times');
 
+  popUpContainer.classList.add('popup-container');
+  showImage.classList.add('popup-image');
+  showTitle.classList.add('popup-title');
+  commentsHeading.classList.add('dsc-heading');
   // adding semantics to the nodes created
   nameInput.type = 'text';
   commentInput.type = 'text';
