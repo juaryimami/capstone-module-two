@@ -4,7 +4,7 @@ import './style.css';
 
 const container = document.querySelector('.container');
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   getData();
   getListLikesAPI();
 });
