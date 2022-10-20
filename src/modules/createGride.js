@@ -4,6 +4,7 @@ import commentPopUp, {
   setCommentsToAPI,
 } from './comment-pop-up-structure.js';
 
+// eslint-disable-next-line
 export const createGrid = (arrayComics) => {
   const containerJS = document.createDocumentFragment();
   const mainContainer = document.querySelector('.container');
