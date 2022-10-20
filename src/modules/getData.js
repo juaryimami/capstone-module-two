@@ -1,8 +1,7 @@
 import { createGrid } from './createGride.js';
-
+import { dataURL } from './constants.js';
 import { setDataLocalStorage } from './store.js';
 
-const dataURL = 'https://api.tvmaze.com/search/shows?q=spiderman';
 const getComics = async () => {
   const response = await fetch(dataURL);
   const comics = await response.json();

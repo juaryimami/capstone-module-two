@@ -2,9 +2,10 @@
 
 # Capstone project for module two
 
-In this project, I set up my To-Do List web page. My goal was add the functionality to add and display each todo task inside my task list. 
+In this project, we set up our Capstone project of dynamic web page. Our goal is implement 
+the all lessons we learned in javascript module. 
 
-![screenshot](/public/Screenshot%20from%202022-10-06%2009-06-02.png)
+![screenshot](./public/Screenshot%20from%202022-10-20%2011-48-34.png)
 
 ## :red_circle: Live Demo
 You can view my hosted website in the link shown below.
