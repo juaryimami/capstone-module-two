@@ -3,7 +3,7 @@ import commentPopUp, {
   getCommentsFromAPI,
   setCommentsToAPI,
 } from './comment-pop-up-structure.js';
-
+import { addCounter } from './itemCounter.js';
 // eslint-disable-next-line
 export const createGrid = (arrayComics) => {
   const containerJS = document.createDocumentFragment();
@@ -48,4 +48,5 @@ export const createGrid = (arrayComics) => {
     });
   });
   mainContainer.appendChild(containerJS);
+  addCounter();
 };
