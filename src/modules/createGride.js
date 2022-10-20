@@ -1,4 +1,9 @@
 // eslint-disable-next-line import/prefer-default-export
+import commentPopUp, {
+  getCommentsFromAPI,
+  setCommentsToAPI,
+} from './comment-pop-up-structure.js';
+
 export const createGrid = (arrayComics) => {
   const containerJS = document.createDocumentFragment();
   const mainContainer = document.querySelector('.container');
@@ -36,6 +41,10 @@ export const createGrid = (arrayComics) => {
     container.appendChild(likeBox);
     container.appendChild(button);
     containerJS.appendChild(container);
+    button.addEventListener('click', () => {
+      // commentPopUp(comic);
+      commentPopUp(comic, comic.show.id, getCommentsFromAPI, setCommentsToAPI);
+    });
   });
   mainContainer.appendChild(containerJS);
 };

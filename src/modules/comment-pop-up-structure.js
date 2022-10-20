@@ -2,14 +2,14 @@
 import APP_KEY from './constants.js';
 
 //async function to get the comments from the API
-const getCommentsFromAPI = async (itemID) => {
+export const getCommentsFromAPI = async (itemID) => {
   const response = await fetch(`${APP_KEY}comments?item_id=${itemID}`);
   const commentsArr = await response.json();
   return commentsArr;
 };
 
 //async functions to create a new comment in the API
-const setCommentsToAPI = async (itemID, name, comment) => {
+export const setCommentsToAPI = async (itemID, name, comment) => {
   const data = {
     method: 'POST',
     headers: {
@@ -25,18 +25,25 @@ const setCommentsToAPI = async (itemID, name, comment) => {
   console.log(response);
 };
 
+const closePopUp = (node) => {
+  document.body.removeChild(node);
+};
+
 // the main pop-up function with 2 call back functions
 const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   //creating the nodes of the popup
   const popUpContainer = document.createElement('div');
   const showImage = document.createElement('img');
   const showTitle = document.createElement('h2');
+  const commentsHeading = document.createElement('h2');
   const showDescription = document.createElement('p');
   const commentsContainer = document.createElement('ul');
   const commentForm = document.createElement('form');
   const nameInput = document.createElement('input');
   const commentInput = document.createElement('input');
   const commentBtn = document.createElement('button');
+  const closePopUpBtn = document.createElement('i');
+  closePopUpBtn.classList.add('fa', 'fa-times');
 
   //adding semantics to the nodes created
   nameInput.type = 'text';
@@ -45,6 +52,7 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   nameInput.setAttribute('placeholder', 'Your name');
   commentInput.setAttribute('placeholder', 'Your insight');
   commentBtn.innerText = 'Comment';
+  commentBtn.classList.add('button');
 
   //appending the inputs and comment button node to the form
   commentForm.appendChild(nameInput);
@@ -52,9 +60,11 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   commentForm.appendChild(commentBtn);
 
   //appending the nodes of the popup to the popup container
+  popUpContainer.appendChild(closePopUpBtn);
   popUpContainer.appendChild(showImage);
   popUpContainer.appendChild(showTitle);
   popUpContainer.appendChild(showDescription);
+  popUpContainer.appendChild(commentsHeading);
   popUpContainer.appendChild(commentsContainer);
   popUpContainer.appendChild(commentForm);
 
@@ -64,20 +74,48 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   showDescription.innerHTML = `${obj.show.summary}`;
 
   //this callback will call the getElementsFromAPI function
-  const CommentObjArr = getCommentCallback(id).then((data) => data);
+  const CommentObjArr = getCommentCallback(id).then(
+    (data) => {
+      // console.log(data);
+      return data;
+    },
+    (error) => {
+      throw new Error(error);
+    }
+  );
 
   //constructing new comments from the array of objects
-  CommentObjArr.forEach((e) => {
-    const newComment = document.createElement('li');
-    newComment.innerText = `${e.creation_date} ${e.username}: ${e.comment}`;
-    commentsContainer.appendChild(newComment);
-  });
+  console.log(CommentObjArr);
 
+  CommentObjArr.then(
+    (data) => {
+      if (data.length > 0) {
+        data.forEach((e) => {
+          const newComment = document.createElement('li');
+          newComment.innerText = `${e.creation_date} ${e.username}: ${e.comment}`;
+          commentsContainer.appendChild(newComment);
+        });
+      }
+    },
+    (error) => {
+      return error;
+    }
+  );
+
+  console.log(id);
   //adding the event listener for the submit event of the form
-  commentForm.addEventListener('submit', () => {
+  commentForm.addEventListener('submit', (event) => {
+    event.preventDefault();
     //this callback will call the getElementsFromAPI function
     setCommentCallback(id, nameInput.value, commentInput.value);
     commentForm.reset();
+  });
+
+  console.log(popUpContainer);
+  document.body.appendChild(popUpContainer);
+  popUpContainer.classList.add('commentsPopUp');
+  closePopUpBtn.addEventListener('click', () => {
+    closePopUp(popUpContainer);
   });
 };
 

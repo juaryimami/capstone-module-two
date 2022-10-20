@@ -101,3 +101,45 @@ header {
   background: rgb(247, 60, 60);
   color: #fff;
 }
+
+.commentsPopUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 2rem;
+  bottom: 2rem;
+  overflow-y: scroll;
+  left: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  background-color: rgba(252, 246, 232, 0.986);
+  row-gap: 1rem;
+  font-family: cursive;
+}
+
+.commentsPopUp > i {
+  align-self: flex-end;
+}
+
+.commentsPopUp > img {
+  height: 70%;
+}
+
+.commentsPopUp > form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 50%;
+}
+
+.commentsPopUp > form > button {
+  width: 50%;
+  align-self: center;
+}
+
+.commentsPopUp > form > input {
+  height: 2rem;
+  padding: 0.3rem;
+  font-family: cursive;
+}
