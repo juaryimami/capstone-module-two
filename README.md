@@ -9,7 +9,7 @@ the all lessons we learned in javascript module.
 
 ## :red_circle: Live Demo
 You can view my hosted website in the link shown below.
-GitHub: [@JUPAC](https://juaryimami.github.io/capestone-module-two/dist/)
+GitHub: [@DEMO](https://juaryimami.github.io/capstone-module-two/dist/)
 
 ## :hammer: Built With
 
