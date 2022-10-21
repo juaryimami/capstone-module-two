@@ -93,6 +93,7 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   CommentObjArr.then(
     (data) => {
       if (data.length > 0) {
+        commentsContainer.innerHTML = '';
         data.forEach((e) => {
           const newComment = document.createElement('li');
           newComment.innerText = `${e.creation_date} ${e.username}: ${e.comment}`;
@@ -110,7 +111,13 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
   commentForm.addEventListener('submit', (event) => {
     event.preventDefault();
     // this callback will call the getElementsFromAPI function
+
     setCommentCallback(id, nameInput.value, commentInput.value);
+    const newComment = document.createElement('li');
+    const date = new Date().toJSON().slice(0, 10);
+    newComment.innerText = `${date} ${nameInput.value}: ${commentInput.value}`;
+    commentsContainer.appendChild(newComment);
+
     commentForm.reset();
   });
 
