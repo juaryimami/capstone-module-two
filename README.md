@@ -96,6 +96,7 @@ Feel free to check the [issues page](https://github.com/juaryimami/capstone-modu
 ## :grey_exclamation: Acknowledgments
 
 - [Microverse](https://www.microverse.org/)
+- @ArthurGC and his team mates for giving the inspiration.
 
 ## 📝 License
 
