@@ -86,7 +86,7 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
     (data) => data,
     (error) => {
       throw new Error(error);
-    }
+    },
   );
 
   // constructing new comments from the array of objects
@@ -103,7 +103,7 @@ const commentPopUp = (obj, id, getCommentCallback, setCommentCallback) => {
       commentCounter = countComments(commentsContainer);
       commentsHeading.innerText = `Comments (${commentCounter})`;
     },
-    (error) => error
+    (error) => error,
   );
 
   // adding the event listener for the submit event of the form

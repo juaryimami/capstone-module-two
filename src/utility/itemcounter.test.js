@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { expect, test } = require('@jest/globals');
+const { expect, test, describe } = require('@jest/globals');
 const htmlTemplate = require('./templatePagel.js');
 const itemCounter = require('./ItemConter.js');
 
