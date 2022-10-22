@@ -1,0 +1,152 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  padding: calc(1rem + 0.8vw) calc(1.5rem + 4.5vw);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  text-decoration: none;
+  color: rgb(253, 173, 0);
+}
+
+.navbar li {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.container {
+  padding: calc(1rem + 0.8vw) calc(1.5rem + 2vw);
+  margin-inline: auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(1rem + 3vw);
+}
+
+.item {
+  min-width: 250px;
+  max-width: 280px;
+}
+
+.img-container img {
+  width: 100%;
+  max-height: 389px;
+}
+
+.like-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  flex-basis: 75%;
+}
+
+.icon-heart {
+  font-size: calc(1rem + 0.2vw);
+  color: red;
+  cursor: pointer;
+}
+
+.likes {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.button {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  background: rgb(253, 173, 0);
+  border-radius: 8px;
+  transition: background 0.5s, color 0.5s;
+}
+
+.container .button:hover {
+  background: rgb(247, 60, 60);
+  color: #fff;
+}
+
+.commentsPopUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 2rem;
+  bottom: 2rem;
+  overflow-y: scroll;
+  left: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  background-color: rgba(252, 246, 232, 0.986);
+  row-gap: 1rem;
+  font-family: cursive;
+}
+
+.commentsPopUp > i {
+  align-self: flex-end;
+}
+
+.commentsPopUp > img {
+  height: 70%;
+}
+
+.commentsPopUp > form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 50%;
+}
+
+.commentsPopUp > form > button {
+  width: 50%;
+  align-self: center;
+}
+
+.commentsPopUp > form > input {
+  height: 2rem;
+  padding: 0.3rem;
+  font-family: cursive;
+}
+
+footer {
+  padding: calc(1rem + 0.8vw) calc(1.5rem + 4.5vw);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 32px;
+}
