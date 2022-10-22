@@ -11,7 +11,8 @@ the all lessons we learned in javascript module.
 You can view my hosted website in the link shown below.
 
 - Deployed: [Live webpage](https://juaryimami.github.io/capstone-module-two/dist/)
-- Video: [Loom video link](https://www.loom.com/share/05024db5a0264262a79cae35baee1cd1)
+- Video1: [Loom video link](https://www.loom.com/share/05024db5a0264262a79cae35baee1cd1)
+- Video2: [loom video link] (https://www.loom.com/share/1e62273af6d148d89dcf31b2ad6befad)
 
 ## :hammer: Built With
 
